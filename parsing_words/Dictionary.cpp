@@ -9,12 +9,6 @@
 		fin.close();
 	}
 	
-	void Dictionary::getInfo(string& word) {
-		cout << "Word: " << word << "\nDefinitions: " << endl;
-		for (auto &x : mapped_words.at(word).list) 
-			cout << "Part of Speech:" << x.POS << "\nDefinition:" << x.meaning << endl << endl;
-	}
-	
 	vector<string> Dictionary::split(string& s, string&& delimiter, bool&& grab_word) {
 		vector<string> list;
 		size_t pos = 0;

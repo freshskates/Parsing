@@ -27,8 +27,6 @@ public:
 	
 	void read();
 	
-	void getInfo(string& word);
-	
 	static vector<string> split(string& s, string&& delimiter, bool&& grab_word = false);
 
 private:
