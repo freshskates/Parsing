@@ -1,6 +1,6 @@
 #include "Header.h"
-#include "Bridge.h"
-#include "Panel.cpp"
+#include "Dictionary.h"
+#include "Panel.h"
 
 int main()
 {

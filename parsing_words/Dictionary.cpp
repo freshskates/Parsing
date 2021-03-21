@@ -1,30 +1,7 @@
 #include "Header.h"
+#include "Dictionary.h"
 
-struct Definition {
-	string POS, meaning; 
-	Definition(string&& POS, string&& meaning) :POS(POS), meaning(meaning) {}
-	Definition(string& POS, string& meaning) :POS(POS), meaning(meaning) {}
-};
-
-struct Word {
-	vector<Definition> list; 
-	Word(int&& n) {
-		list.reserve(n);
-	}
-	Word(int& n) {
-		list.reserve(n);
-	}
-	Word() {}
-};
-
-class Dictionary {
-public:
-	map<string, Word> mapped_words = {};
-	int definitions = 0; 
-	Dictionary(){};
-	Dictionary(string& file) : file(file) {}
-	
-	void read() {
+	void Dictionary::read() {
 		string line;
 		ifstream fin;
 		fin.open(this->file.c_str());
@@ -32,13 +9,13 @@ public:
 		fin.close();
 	}
 	
-	void getInfo(string& word) {
+	void Dictionary::getInfo(string& word) {
 		cout << "Word: " << word << "\nDefinitions: " << endl;
 		for (auto &x : mapped_words.at(word).list) 
 			cout << "Part of Speech:" << x.POS << "\nDefinition:" << x.meaning << endl << endl;
 	}
 	
-	static vector<string> split(string& s, string&& delimiter, bool&& grab_word = false) {
+	vector<string> Dictionary::split(string& s, string&& delimiter, bool&& grab_word) {
 		vector<string> list;
 		size_t pos = 0;
 		string token;
@@ -50,9 +27,8 @@ public:
 		list.emplace_back(s);
 		return list;
 	}
-private:
-	string file;
-	string trim(string& s, bool&& flag)
+
+	string Dictionary::trim(string& s, bool&& flag)
 	{
 		size_t pos = flag ? s.find_first_not_of(" ") : s.find_last_not_of(" ");
 		if(flag)
@@ -60,7 +36,7 @@ private:
 		return pos == string::npos ? "" : s.substr(0, pos + 1);
 	}
 
-	void map_words(string& line) {
+	void Dictionary::map_words(string& line) {
 		string word{ split(line, "|", true)[0] };
 		vector<string> definition = split(line, "|"), temp(2);
 		Word word_info(definition.size());
@@ -72,4 +48,3 @@ private:
 		}
 		mapped_words.insert({word, word_info});
 	}
-};

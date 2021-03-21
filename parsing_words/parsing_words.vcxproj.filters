@@ -34,7 +34,10 @@
     <ClInclude Include="Header.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Bridge.h">
+    <ClInclude Include="Panel.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dictionary.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

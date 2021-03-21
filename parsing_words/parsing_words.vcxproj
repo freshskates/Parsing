@@ -147,8 +147,9 @@
     <Text Include="..\..\..\..\Downloads\sfsu.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Dictionary.h" />
     <ClInclude Include="Header.h" />
-    <ClInclude Include="Bridge.h" />
+    <ClInclude Include="Panel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
