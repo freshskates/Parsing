@@ -1,6 +1,9 @@
 #pragma once
-#include "Header.h"
+#include <iostream>
+#include <string>
+#include <vector>
 #include <unordered_map>
+using namespace std;
 
 struct Definition {
 	string POS, meaning; 

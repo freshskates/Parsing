@@ -1,4 +1,3 @@
-#include "Header.h"
 #include "Panel.h"
 
 	void Panel::help() {
