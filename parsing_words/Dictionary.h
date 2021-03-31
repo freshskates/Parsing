@@ -1,4 +1,5 @@
 #pragma once
+#include "Header.h"
 #include <fstream>
 #include <unordered_map>
 
@@ -26,21 +27,13 @@ struct Word {
 class Dictionary {
 public:
 	unordered_map<string, Word> mapped_words = {};
-	
 	int definitions = 0;
-	
 	Dictionary() {};
-	
 	Dictionary(string& file) : file(file) {}
-	
 	void read();
-	
 	static vector<string> split(string& s, string&& delimiter, bool&& grab_word = false);
 
 private:
 	string file;
-
-	string trim(string&, bool&&);
-
 	void map_words(string&);
 };

@@ -1,4 +1,3 @@
-#include "Header.h"
 #include "Dictionary.h"
 
 	void Dictionary::read() {
@@ -22,22 +21,14 @@
 		return list;
 	}
 
-	string Dictionary::trim(string& s, bool&& flag)
-	{
-		size_t pos = flag ? s.find_first_not_of(" ") : s.find_last_not_of(" ");
-		if(flag)
-		return pos == string::npos ? "" : s.substr(pos);
-		return pos == string::npos ? "" : s.substr(0, pos + 1);
-	}
-
 	void Dictionary::map_words(string& line) {
 		string word{ split(line, "|", true)[0] };
 		vector<string> definition = split(line, "|"), temp(2);
 		Word word_info(definition.size());
 		for (int i = 0; i < definition.size(); i++) {
-			temp = split(definition[i], "-=>>", true);
+			temp = split(definition[i], " -=>> ", true);
 			if (temp.size() != 2) continue;
-			word_info.list.emplace_back(trim(temp[0], false), trim(temp[1], true));
+			word_info.list.emplace_back(temp[0], temp[1]);
 			temp.clear(), definitions++;
 		}
 		mapped_words.insert({word, word_info});

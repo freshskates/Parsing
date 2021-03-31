@@ -11,6 +11,3 @@ int main()
 	Panel panel(storage);
 	panel.start();
 }
-
-// umap<string, Word>
-// Word, vector<meanings> 
