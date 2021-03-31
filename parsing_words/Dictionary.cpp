@@ -1,4 +1,5 @@
 #include "Dictionary.h"
+#include <fstream>
 
 	void Dictionary::read() {
 		string line;
