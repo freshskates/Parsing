@@ -9,7 +9,7 @@ public:
 
 	Panel(Dictionary& storage) :temp(storage) {}
 	vector<Definition> display;
-	vector<string> options = { "distinct", "reverse", "noun", "verb", "adverb", "adjective", "pronoun", "preposition", "conjunction", "interjection" };
+	vector<string> options { "distinct", "reverse", "noun", "verb", "adverb", "adjective", "pronoun", "preposition", "conjunction", "interjection" };
 	
 	void help();
 	void start();
