@@ -29,17 +29,17 @@
 	}
 	void Panel::print() {
 		cout << endl;
-		for_each(display.begin(), display.end(), [](Definition& a) -> void { cout << "[" << a.POS << "] " << a.meaning << endl; });
+		for_each(display.begin(), display.end(), [](const Definition& a) -> void { cout << "[" << a.POS << "] " << a.meaning << endl; });
 		cout << endl; 
 	}
 	void Panel::sort_list() {
-		sort(display.begin(), display.end(), [](Definition& a, Definition& b) -> bool {return a.meaning < b.meaning; });
+		sort(display.begin(), display.end(), [](const Definition& a, const Definition& b) -> bool {return a.meaning < b.meaning; });
 	}
 	void Panel::removedup() {
-		display.erase(unique(display.begin(), display.end(), [](Definition& a, Definition& b) -> bool { return a.meaning == b.meaning; }), display.end());
+		display.erase(unique(display.begin(), display.end(), [](const Definition& a, const Definition& b) -> bool { return a.meaning == b.meaning; }), display.end());
 	}
 	void Panel::filter(const string& pos) {
-		display.erase(remove_if(display.begin(), display.end(), [&pos](Definition& a) -> bool { return a.POS != pos; }), display.end());
+		display.erase(remove_if(display.begin(), display.end(), [&pos](const Definition& a) -> bool { return a.POS != pos; }), display.end());
 	}
 	void Panel::reverse_list() {
 		reverse(display.begin(), display.end());
