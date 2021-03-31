@@ -16,13 +16,11 @@ struct Word {
 	Word() {}
 };
 
-
 //<storage> string string string 
 //school name, <storage> 
 //abc, def, ghi 
 //School Name, School Type, Starting Median Salary, Mid - Career Median Salary, Mid - Career 10th Percentile Salary, Mid - Career 25th Percentile Salary, Mid - Career 75th Percentile Salary, Mid - Career 90th Percentile Salary
 //Massachusetts Institute of Technology(MIT), Engineering, "$72,200.00", "$126,000.00", "$76,800.00", "$99,200.00", "$168,000.00", "$220,000.00"
-
 
 class Dictionary {
 public:
