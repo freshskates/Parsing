@@ -11,10 +11,11 @@ struct Definition {
 	Definition(string& POS, string& meaning) :POS(POS), meaning(meaning) {}
 };
 
-struct Word {
-	vector<Definition> list;
-	Word(const int&& n) :list(n) {}
-	Word(const int& n) :list(n) {}
+struct Word { 
+	//Word(int n) :list(n) {} 
+	vector<Definition> list; 
+	Word(const int&& n) { list.reserve(n); }
+	Word(const int& n) { list.reserve(n); }
 	Word() = default; 
 };
 
@@ -23,7 +24,7 @@ class Dictionary {
 	void map_words(string&);
 public:
 	unordered_map<string, Word> mapped_words;
-	int definitions{ 0 };
+	int definitions{};
 	Dictionary() {};
 	Dictionary(string& file) : file(file) {}
 	void read();

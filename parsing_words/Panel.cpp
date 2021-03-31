@@ -7,7 +7,7 @@
 		cout << "Enter Statement: ";
 	}
 
-	void Panel::start() {
+	void Panel::start(){
 		while (true) {
 			help();
 			string line;
