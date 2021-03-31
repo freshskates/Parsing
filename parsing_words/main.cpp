@@ -12,3 +12,5 @@ int main()
 	panel.start();
 }
 
+// umap<string, Word>
+// Word, vector<meanings> 

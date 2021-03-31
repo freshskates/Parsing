@@ -12,13 +12,13 @@ public:
 	
 	vector<Definition> display;
 	
-	vector<string> options = { "distinct", "reversed", "noun", "verb", "adverb", "adjective", "pronoun", "preposition", "conjunction", "interjection" };
+	vector<string> options = { "distinct", "reverse", "noun", "verb", "adverb", "adjective", "pronoun", "preposition", "conjunction", "interjection" };
 	
 	void help();
 
 	void start();
 
-	void option(string& check);
+	void option(string&);
 
 	void print();
 
@@ -26,7 +26,7 @@ public:
 	
 	void removedup();
 	
-	void filter(string& pos);
+	void filter(string&);
 
 	void reverse_list();
 };
