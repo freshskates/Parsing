@@ -9,7 +9,7 @@
 		fin.close();
 	}
 	
-	vector<string> Dictionary::split(string& s, string&& delimiter, bool&& grab_word) {
+	vector<string> Dictionary::split(string& s, const string&& delimiter, const bool&& grab_word) {
 		vector<string> list;
 		size_t pos = 0;
 		string token;
@@ -28,9 +28,9 @@
 		Word word_info(definition.size());
 		for (int i = 0; i < definition.size(); i++) {
 			temp = split(definition[i], " -=>> ", true);
-			if (temp.size() != 2) continue;
+			if (temp.size() != 2) break;
 			word_info.list.emplace_back(temp[0], temp[1]);
-			temp.clear(), definitions++;
+			definitions++;
 		}
 		mapped_words.insert({word, word_info});
 	}

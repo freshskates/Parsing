@@ -12,22 +12,20 @@ struct Definition {
 };
 
 struct Word {
-	vector<Definition> list; 
-	Word(int&& n) { list.reserve(n); }
-	Word(int& n)  { list.reserve(n); }
+	vector<Definition> list;
+	Word(const int&& n) :list(n) {}
+	Word(const int& n) :list(n) {}
 	Word() = default; 
 };
 
 class Dictionary {
+	string file;
+	void map_words(string&);
 public:
 	unordered_map<string, Word> mapped_words;
 	int definitions{ 0 };
 	Dictionary() {};
 	Dictionary(string& file) : file(file) {}
 	void read();
-	static vector<string> split(string& s, string&& delimiter, bool&& grab_word = false);
-
-private:
-	string file;
-	void map_words(string&);
+	static vector<string> split(string& s, const string&& delimiter, const bool&& grab_word = false);
 };

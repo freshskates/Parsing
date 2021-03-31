@@ -13,10 +13,10 @@ public:
 	
 	void help();
 	void start();
-	void option(string&);
+	void option(const string&);
 	void print();
 	void sort_list();
 	void removedup();
-	void filter(string&);
+	void filter(const string&);
 	void reverse_list();
 };
