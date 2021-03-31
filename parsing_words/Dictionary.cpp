@@ -12,7 +12,6 @@
 	vector<string> Dictionary::split(string& s, const string&& delimiter, const bool&& grab_word) {
 		vector<string> list;
 		size_t pos{};
-		string token;
 		while ((pos = s.find(delimiter)) != string::npos) {
 			list.emplace_back(s.substr(0, pos));
 			s.erase(0, pos + delimiter.length());
