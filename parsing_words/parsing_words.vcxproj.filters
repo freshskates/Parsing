@@ -18,7 +18,7 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\panel\panels.cpp">
+    <ClCompile Include="src\panel\panel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\controller\dictionary.cpp">
@@ -32,7 +32,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\panel\panels.h">
+    <ClInclude Include="src\panel\panel.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\controller\dictionary.h">
