@@ -21,7 +21,7 @@
     <ClCompile Include="src\panel\panel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\controller\dictionary.cpp">
+    <ClCompile Include="src\controller\dictionarys.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\handler\handler.cpp">
