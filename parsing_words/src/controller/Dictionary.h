@@ -24,9 +24,9 @@ class Dictionary {
 	void map_words(string&);
 public:
 	unordered_map<string, Word> mapped_words;
-	int definitions{};
+	int definitions{0};
 	Dictionary() {};
 	Dictionary(string& file) : file(file) {}
-	void read();
+	void read();	
 	static vector<string> split(string& s, const string&& delimiter, const bool&& grab_word = false);
 };
