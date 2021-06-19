@@ -35,7 +35,7 @@
     <ClInclude Include="src\panel\panel.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\controller\dictionarys.h">
+    <ClInclude Include="src\controller\dictionary.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\handler\handler.h">
