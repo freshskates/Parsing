@@ -1,4 +1,4 @@
-#include "Panel.h"
+#include "panel.h"
 
 void Panel::status(int flag) {
 	

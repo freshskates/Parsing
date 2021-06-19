@@ -1,4 +1,4 @@
-#include "Panel.h"
+#include "panel.h"
 #include "../handler/handler.h"
 #include <algorithm>
 

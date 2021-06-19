@@ -1,5 +1,5 @@
 #pragma once
-#include "../controller/Dictionary.h"
+#include "../controller/dictionary.h"
 
 class Handler
 {

@@ -1,5 +1,5 @@
 #pragma once
-#include "../controller/Dictionary.h"
+#include "../controller/dictionary.h"
 
 class Panel {
 	enum Flags {info = 1, help = 2, notFound = 4, prompt = 8, quit = 16};
