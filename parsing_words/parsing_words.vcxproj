@@ -145,13 +145,13 @@
   <ItemGroup>
     <ClCompile Include="src\handler\handler.cpp" />
     <ClCompile Include="src\panel\panel.cpp" />
-    <ClCompile Include="src\controller\dictionarys.cpp" />
+    <ClCompile Include="src\controller\dictionary.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\panel\status.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\handler\handler.h" />
-    <ClInclude Include="src\controller\dictionary.h" />
+    <ClInclude Include="src\controller\dictionarys.h" />
     <ClInclude Include="src\panel\panel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
