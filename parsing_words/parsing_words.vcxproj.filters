@@ -32,7 +32,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\panel\panel.h">
+    <ClInclude Include="src\panel\Panel.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\controller\dictionary.h">
