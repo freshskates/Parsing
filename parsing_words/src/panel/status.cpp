@@ -21,11 +21,34 @@ void Panel::status(int flag) {
     }
 
     if (flag & prompt) {
-        cout << "Search [ " <<  ++this->count << "]: ";
+        cout << "Search [" <<  ++this->count << "]: ";
     }
 
     if (flag & quit) {
-        cout << "-----THANK YOU-----";
+        cout << "-----THANK YOU-----\n";
     }
 
+}
+
+
+void Panel::error(int index, string option) {
+    vector<string> opts = { "a part of speech", "'distinct'", "'reverse'" };
+    string suffix[] = { "nd", "rd", "th" };
+    string param = to_string(index + 1) + suffix[index - 1];
+    
+    cout << "\t|\n";
+    
+    for (int i = index - 1; i < opts.size(); i++)
+        cout << "\t<The entered " << param << " parameter '" << option << "' is NOT " << opts[i] << ".>\n" ;
+    cout << "\t<The entered " << param << " parameter '" << option << "' was disregarded.>\n";
+
+    string joinedString; 
+    for (int i = index - 1; i < opts.size(); i++) {
+        if (i == opts.size() - 1)
+            joinedString.append(opts[i]);
+        else
+            joinedString.append(opts[i].append(" or "));
+    }
+
+    cout << "\t<The " << param << " parameter should be " << joinedString <<  ".>\n\t|\n";
 }

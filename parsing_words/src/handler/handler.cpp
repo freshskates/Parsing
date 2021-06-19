@@ -12,3 +12,8 @@ void Handler::filter(vector<Definition>& definitions, const string& pos) {
 void Handler::reverse_list(vector<Definition>& definitions) {
 	reverse(definitions.begin(), definitions.end());
 }
+
+
+void Handler::sort_list(vector<Definition>& definitions) {
+	sort(definitions.begin(), definitions.end(), [](const Definition& a, const Definition& b) -> bool {return (a.POS + a.meaning) < (b.POS + b.meaning); });
+}

@@ -17,7 +17,7 @@
 			s.erase(0, pos + delimiter.length());
 			if (grab_word) break;
 		}
-		list.emplace_back(s);
+		if(s.size()) list.emplace_back(s);
 		return list;
 	}
 
