@@ -10,8 +10,13 @@
 			getline(cin, line);
 			transform(line.begin(), line.end(), line.begin(), ::tolower);
 			vector<string> user_input = Dictionary::split(line, " ");
+			
+			if (line.size() == 0) {
+				status(help);
+				continue;
+			}
 			if (user_input[0] == options[0]) break;
-
+			
 			if (!user_input.size() || user_input.size() > 4 || user_input[0] == options[1]) {
 				status(help);
 				continue;

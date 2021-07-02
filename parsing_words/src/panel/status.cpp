@@ -1,5 +1,11 @@
 #include "panel.h"
 
+/**
+ * 
+ *  
+ * @param values Container whose values are summed.
+ * @return sum of `values`, or 0.0 if `values` is empty.
+ */
 void Panel::status(int flag) {
 	
     if (flag & notFound) {
@@ -15,7 +21,7 @@ void Panel::status(int flag) {
     if (flag & info) {
         cout << "! Loading data...\n";
         cout << "! Loading completed...\n";
-        cout << "===== DICTIONARY 340 JAVA =====\n";
+        cout << "===== DICTIONARY 340 C++ =====\n";
         cout << "----- Keywords: " << this->temp.mapped_words.size() << "\n";
         cout << "----- Definitions: " << this->temp.definitions << "\n";
     }
