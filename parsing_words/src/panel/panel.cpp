@@ -2,6 +2,15 @@
 #include "../handler/handler.h"
 #include <algorithm>
 
+    /**
+     * Start will start a loop awaiting users input
+     * Part of speech only 2nd parameter
+     * Distinct up to 3rd parameter
+     * Reverse up to 4th parameter
+     * @apiNote Users input should consist of {Word} {{Part of Speech}} {Distinct} {Reverse}
+     * !q for graceful exit
+     * !help for help
+     */
 	void Panel::run() {
 		status(info);
 		while (true) {
@@ -35,6 +44,12 @@
 		status(quit);
 	}
 
+	/**
+	 * Option will validate the options other than the word
+	 * valid options consist of {Part of Speech}, {Distinct}, {Reverse}
+	 *
+	 * @apiNote If option not found, it will call nofFound method
+	 */
 	void Panel::option(const string& check, int& index) {
 		for (int i = 0; i < partOfSpeeches.size() && index == 1; i++)
 			if (check == partOfSpeeches[i]) {

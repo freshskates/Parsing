@@ -1,10 +1,16 @@
 #include "panel.h"
 
 /**
- * 
- *  
- * @param values Container whose values are summed.
- * @return sum of `values`, or 0.0 if `values` is empty.
+ * Status is used to print out error, help, info and prompt messages to user
+ * @param flag Integer that will be bit masked to see what options were selected
+ * @apiNote notFound:  1     0x00000001
+ * @apiNote Help:      2     0x00000010
+ * @apiNote Info:      4     0x00000100
+ * @apiNote Prompt:    8     0x00001000
+ * @apiNote exit:     16     0x00010000
+ * Bitmask: Popular approach in many big libraries to increase flexibility
+ * Example: To print Help then a prompt, you need to 'or' the values
+ * status(2 | 8) or status(help | prompt), both will print help menu then prompt users input
  */
 void Panel::status(int flag) {
 	
@@ -36,7 +42,12 @@ void Panel::status(int flag) {
 
 }
 
-
+/**
+ * notFound is used when user input was not recognized
+ * Prints out error message to user
+ * @param index will be the n_th phrase that is considered as the user's input
+ * @param option users input that was not recognized
+ */
 void Panel::error(int index, string option) {
     vector<string> opts = { "a part of speech", "'distinct'", "'reverse'" };
     string suffix[] = { "nd", "rd", "th" };

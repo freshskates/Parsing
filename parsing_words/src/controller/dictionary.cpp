@@ -1,10 +1,31 @@
 #include "dictionary.h"
 #include <fstream>
 
+/*
+! Opening data file... C:\Users\MickeyMouse\AbsolutePath\DB\Data.CS.SFSU.txt
+<!>ERROR<!> ===> File could not be opened.
+<!>ERROR<!> ===> Provided file path: C:\Users\MickeyMouse\AbsolutePath\DB\Data.CS.SFSU.txt
+<!>Enter the CORRECT data file path: ./Data.CS.SFSU.txt
+src/data/sfsu.txt
+*/
+
 	void Dictionary::read() {
 		string line;
 		ifstream fin;
+		bool valid = false; 
+		do {
+		cout << "! Opening data file... " << this->file << endl; 
 		fin.open(this->file.c_str());
+		if (!fin.is_open()) {
+			cout << "<!>ERROR<!> == = > File could not be opened." << endl; 
+			cout << "<!>ERROR<!> == = > Provided file path : " << this->file << endl; 
+			cout << "<!>Enter the CORRECT data file path : "; 
+			cin >> this->file; 
+		}
+		else {
+			valid = true; 
+		}
+		} while (!valid);
 		while (getline(fin, line)) map_words(line);
 		fin.close();
 	}
