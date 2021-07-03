@@ -67,6 +67,9 @@
 		error(index, check);
 	}
 
+	/**
+     * Print out word and corresponding info
+     */
 	void Panel::print(string& word) {
 		if (!this->display.size()) {
 			status(notFound | help);

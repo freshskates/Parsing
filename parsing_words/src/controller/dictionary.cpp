@@ -8,7 +8,9 @@
 <!>Enter the CORRECT data file path: ./Data.CS.SFSU.txt
 src/data/sfsu.txt
 */
-
+	/**
+     * Read and validate data
+     */
 	void Dictionary::read() {
 		string line;
 		ifstream fin;
@@ -30,6 +32,9 @@ src/data/sfsu.txt
 		fin.close();
 	}
 	
+	/**
+	 * Split function made to sepreate incomming data from user
+	 */
 	vector<string> Dictionary::split(string& s, const string&& delimiter, const bool&& grab_word) {
 		vector<string> list;
 		size_t pos{};
@@ -42,6 +47,9 @@ src/data/sfsu.txt
 		return list;
 	}
 
+	/**
+	 * assign and map each word to its position inside the hashmap
+	 */
 	void Dictionary::map_words(string& line) {
 		string word{ split(line, "|", true)[0] };
 		vector<string> definition = split(line, "|"), temp(2);
